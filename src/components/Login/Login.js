@@ -17,16 +17,14 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
     leftDiv: {
-        margin: '5em',
-    },
-    rightDiv: {
         border: 'none',
         height: '100vh',
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
         backgroundImage: `url(${artwork})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
+    },
+    rightDiv: {
+        margin: '5em'
     },
     socialGrid: {
         marginTop: 10,
@@ -117,8 +115,13 @@ function Login() {
     return (
         <div className={classes.root}>
             <Grid container alignItems="center">
-                <Grid item xs={8}>
+                <Grid item xs={6}>
                     <div className={classes.leftDiv}>
+                        
+                    </div>
+                </Grid>
+                <Grid item xs={6}>
+                    <div className={classes.rightDiv}>
                         <h1 className={classes.heading}>
                             Welcome Back!
                         </h1>
@@ -166,11 +169,6 @@ function Login() {
                         <div>
                             Don't have an account? <Link to='/signup' style={{color: "#ff4747"}}>Sign Up!</Link>
                         </div>
-                    </div>
-                </Grid>
-                <Grid item xs={4}>
-                    <div className={classes.rightDiv}>
-                        
                     </div>
                 </Grid>
             </Grid>
