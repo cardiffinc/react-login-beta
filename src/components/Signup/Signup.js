@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import artwork from '../../staticAssets/login-artwork.png'
+import artwork from '../../staticAssets/login-artwork.jpg'
 import facebook from '../../staticAssets/facebook.png'
 import instagram from '../../staticAssets/instagram.png'
 import linkedin from '../../staticAssets/linkedin.png'
