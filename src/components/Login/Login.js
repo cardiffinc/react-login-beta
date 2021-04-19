@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import artwork from '../../staticAssets/login-artwork.jpg'
 import GoogleSignIn from '../../staticAssets/google_signin.png'
-import { Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
+import { Avatar, Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import TextInput from '../TextInput/TextField';
@@ -42,14 +42,14 @@ const useStyles = makeStyles((theme) => ({
         display: 'inline-block'
     },
     checkbox: {
-        paddingLeft: 0
+        paddingLeft: 0,
     },
     authButton: {
         marginTop: 25,
         width: '-webkit-fill-available',
         textTransform: 'none',
         color: '#fff',
-        backgroundColor: '#f8f8f8'
+        background: 'linear-gradient(45deg, #6B93F4 30%, #356CF1 90%)',
     },
     divider: {
         marginTop: 25,
@@ -60,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
     },
     forgotPassword: {
         textAlign: 'end',
-        color: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
     },
     googleSignIn:{
         margin: '0 auto',
@@ -144,7 +143,7 @@ function Login() {
                     <div className={classes.leftDiv}>
                         <div className={classes.leftInnerSquare}>
                             <div className={classes.artTextHolder}>
-                                <span className="art-text">Digital</span>
+                                <span className="art-text">▷ Digital</span>
                                 <span className="art-text">Platform</span>
                                 <span className="art-text">for distance</span>
                                 <span className="art-text">learning.</span>
@@ -158,6 +157,7 @@ function Login() {
                 </Grid>
                 <Grid item xs={6}>
                     <div className={classes.rightDiv}>
+                    <Avatar />
                         <h1 className={classes.heading}>
                             Hey, hello 👋
                         </h1>
