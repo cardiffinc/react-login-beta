@@ -1,0 +1,18 @@
+.art-text{
+    text-align: start;
+    display: block;
+    font-size: -webkit-xxx-large;
+    font-weight: 700;
+}
+
+.art-subtitle{
+    text-align: start;
+    display: block;
+}
+
+.text-gradient{
+    background: url('/src/staticAssets/login-artwork.jpg');
+    background-clip: initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
