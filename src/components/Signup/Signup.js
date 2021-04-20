@@ -2,38 +2,33 @@ import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import artwork from '../../staticAssets/login-artwork.jpg'
-import facebook from '../../staticAssets/facebook.png'
-import instagram from '../../staticAssets/instagram.png'
-import linkedin from '../../staticAssets/linkedin.png'
-import twitter from '../../staticAssets/twitter.png'
+import EduParkLogo from '../../staticAssets/Edupark-Login-Logo-ali.png'
 import { Avatar, Button, Checkbox, FormControlLabel } from '@material-ui/core';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import { useHistory } from 'react-router';
 import TextInput from '../TextInput/TextField';
+import './styles.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
-      display: 'flex',
+        flexGrow: 1,
+        display: 'flex',
     },
     leftDiv: {
-        margin: '5em',
-    },
-    rightDiv: {
         border: 'none',
         height: '100vh',
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
         backgroundImage: `url(${artwork})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
+    },
+    rightDiv: {
+        margin: '5em',
     },
     socialGrid: {
         marginTop: 20,
         marginBottom: 20
     },
     inputWrapper: {
-        marginLeft: '5em',
         marginRight: '5em'
     },
     authInput: {
@@ -48,29 +43,46 @@ const useStyles = makeStyles((theme) => ({
     checkbox: {
         paddingLeft: 0
     },
-    buttonGrid:{
+    buttonGrid: {
+        marginTop: 10,
         paddingRight: '5em',
-        paddingLeft: '5em'
     },
-    authButton: {
-        marginTop: 25,
+    authButtonBG: {
         width: '-webkit-fill-available',
         textTransform: 'none',
+        background: 'linear-gradient(to right, #5da4fa, #529afd, #4c8fff, #4c83ff, #5276fe, #5c72fd, #656efc, #6e6afa, #7670fa, #7e75fb, #867bfb, #8d81fb)',
+        '&$disabled': {
+            color: '#ff0000'
+        }
     },
     divider: {
         marginTop: 25,
         marginBottom: 25,
     },
     heading: {
-        color: '#ff4747'
+        color: theme.palette.primary
     },
     error: {
         color: '#ff4747'
     },
-    errorIcon:{
+    errorIcon: {
         verticalAlign: 'middle'
-    }
-  }));
+    },
+    leftInnerSquare: {
+        height: '60vh',
+        width: '40%',
+        margin: '0 auto',
+        top: '20vh',
+        left: '5vw',
+        position: 'fixed',
+        borderRadius: 2,
+        backdropFilter: 'blur(5px)',
+        backgroundColor: '#ffffff26',
+    },
+    artTextHolder: {
+        margin: '5em'
+    },
+}));
 
 function Signup() {
     const classes = useStyles();
@@ -87,18 +99,18 @@ function Signup() {
         return email === user.email;
     }
 
-    const isUniqueEmail = () =>{
+    const isUniqueEmail = () => {
         try {
             const users = JSON.parse(localStorage.getItem('darthUsers'));
             const userExists = users.filter(checkUserExists);
-            if(userExists.length>0){
+            if (userExists.length > 0) {
                 setError('This email is already being used by another member.\nPlease signup with another email!')
                 return false;
             } else {
                 setError(null);
                 return true;
             }
-        } catch(error){
+        } catch (error) {
             setError(null);
             return true;
         }
@@ -106,13 +118,13 @@ function Signup() {
 
     const handleSignup = event => {
         event.preventDefault();
-        if(isUniqueEmail()){
-            const user = {name, email, password}
+        if (isUniqueEmail()) {
+            const user = { name, email, password }
             var users = [];
             try {
                 users = JSON.parse(localStorage.getItem('darthUsers'));
                 users.push(user);
-            } catch(error){
+            } catch (error) {
                 users = [user]
                 console.log(error)
             }
@@ -124,7 +136,7 @@ function Signup() {
 
     useEffect(() => {
         setError(null);
-        if(name !== '' && email !== '' && password !== '' && policy){
+        if (name !== '' && email !== '' && password !== '' && policy) {
             setDisableButton(false)
         } else setDisableButton(true)
     }, [name, email, password, policy])
@@ -134,116 +146,113 @@ function Signup() {
     }, [email])
 
     useEffect(() => {
-        if(error) setDisableButton(true)
+        if (error) setDisableButton(true)
         else setDisableButton(false);
     }, [error])
 
     const configNameInput = {
-        id:"name-input",
-        label:"Name",
+        id: "name-input",
+        label: "Name",
         type: "name"
     }
 
     const configEmailInput = {
-        id:"email-input", 
-        label:"Email",
+        id: "email-input",
+        label: "Email",
         type: "email"
     }
 
     const configPasswordInput = {
-        id:"password-input",
-        label:"Password",
+        id: "password-input",
+        label: "Password",
         type: "password"
     }
 
     return (
         <div className={classes.root}>
             <Grid container alignItems="center">
-                <Grid item xs={8}>
+                <Grid item xs={6}>
                     <div className={classes.leftDiv}>
+                        <div className={classes.leftInnerSquare}>
+                            <div className={classes.artTextHolder}>
+                                <span className="art-text">▷ Digital</span>
+                                <span className="art-text">Platform</span>
+                                <span className="art-text">for distance</span>
+                                <span className="art-text primary-theme-color">learning.</span>
+                                <div className={classes.artSubtitleHolder}>
+                                    <span className="art-subtitle">You will never know everything.</span>
+                                    <span className="art-subtitle">But you will know more.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Grid>
+                <Grid item xs={6}>
+                    <div className={classes.rightDiv}>
+                        <Avatar src={EduParkLogo} />
                         <h1 className={classes.heading}>
-                            Create Account
+                            Hey, Welcome! 🙋‍♂️
                         </h1>
-                        <Grid container 
-                            justify="center" 
-                            className={classes.socialGrid} 
-                            spacing={2}>
-                            <Grid item xs={1}>
-                                <Avatar alt="Facebook" src={facebook} />
-                            </Grid>
-                            <Grid item xs={1}>
-                                <Avatar alt="Instagram" src={instagram} />
-                            </Grid>
-                            <Grid item xs={1}>
-                                <Avatar alt="LinkedIn" src={linkedin} />
-                            </Grid>
-                            <Grid item xs={1}>
-                                <Avatar alt="Twitter" src={twitter} />
-                            </Grid>
-                        </Grid>
-                        <span>or use your email for registration</span>
-                        
+                        <span>Signup using your email and password.</span>
+
                         <form onSubmit={handleSignup}>
                             <div className={classes.inputWrapper}>
-                                <TextInput 
-                                    {...configNameInput } 
-                                    handleChange={event=>setName(event.target.value)}/>  
-                                <TextInput 
-                                    {...configEmailInput } 
-                                    handleChange={event=>setEmail(event.target.value)}/>
-                                <TextInput 
-                                    {...configPasswordInput } 
-                                    handleChange={event=>setPassword(event.target.value)}/>
+                                <TextInput
+                                    {...configNameInput}
+                                    handleChange={event => setName(event.target.value)} />
+                                <TextInput
+                                    {...configEmailInput}
+                                    handleChange={event => setEmail(event.target.value)} />
+                                <TextInput
+                                    {...configPasswordInput}
+                                    handleChange={event => setPassword(event.target.value)} />
                             </div>
                             <FormControlLabel
-                                    control={
+                                control={
                                     <Checkbox
                                         name="checkedB"
                                         color="secondary"
                                         className={classes.checkbox}
                                         onClick={event => event.target.checked ? setPolicy(true) : setPolicy(false)}
                                     />
-                                    }
-                                    label="I agree to the Terms and Privacy Conditions"
-                                    className={classes.checkFormControlLabel}
+                                }
+                                label="I agree to the Terms and Privacy Conditions"
+                                className='art-checkbox-label text-gradient'
                             />
-                            {error && 
-                            <p className={classes.error}><ErrorOutlineIcon className={classes.errorIcon}/> {error}
-                            </p>}
+                            {error &&
+                                <p className={classes.error}><ErrorOutlineIcon className={classes.errorIcon} /> {error}
+                                </p>}
                             <Grid container alignItems="center" spacing={2} className={classes.buttonGrid}>
                                 <Grid item xs={6}>
-                                    <Button 
-                                        fullWidth   
-                                        id="signup-button" 
-                                        variant="contained" 
-                                        size="large" 
-                                        color="secondary" 
-                                        className={classes.authButton} 
-                                        type="submit" 
-                                        style={{color: '#fff'}}
+                                    <Button
+                                        fullWidth
+                                        id="signup-button"
+                                        variant="contained"
+                                        size="large"
+                                        color="secondary"
+                                        className={classes.authButtonBG}
+                                        type="submit"
+                                        style={{ color: '#fff' }}
                                         disabled={disableButton}>
                                         Sign Up
                                     </Button>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Button 
+                                    <Button
                                         fullWidth
-                                        id="signin-button" 
-                                        variant="outlined" 
-                                        size="large" 
-                                        color="secondary" 
-                                        className={classes.authButton} 
-                                        type="button" 
-                                        onClick={()=>history.push('/login')}>
+                                        id="signin-button"
+                                        variant="outlined"
+                                        size="large"
+                                        color="secondary"
+                                        className={classes.authButton}
+                                        type="button"
+                                        onClick={() => history.push('/login')}>
                                         Sign In
                                     </Button>
                                 </Grid>
                             </Grid>
                         </form>
                     </div>
-                </Grid>
-                <Grid item xs={4}>
-                    <div className={classes.rightDiv}></div>
                 </Grid>
             </Grid>
         </div>
