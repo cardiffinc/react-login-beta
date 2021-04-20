@@ -80,6 +80,10 @@ const useStyles = makeStyles((theme) => ({
     },
     artSubtitleHolder: {
         marginTop: 25
+    },
+    error: {
+        marginRight: '5em',
+        color: '#ff4747'
     }
 }));
 
@@ -193,13 +197,34 @@ function Login() {
                                 Sign In
                             </Button>
                             {error &&
-                                <p>{error}
+                                <p className={classes.error}>{error}
                                 </p>}
                         </form>
-                        <Divider className={classes.divider} />
+                        <div className='divider-text'>
+                            <span className='divider-text-title'>or</span>
+                        </div>
                         <div className={classes.googleSignIn}>
                             <img src={GoogleSignIn} className={classes.googleImage}></img>
                         </div>
+                        <Divider className={classes.divider} />
+                        <Grid container alignItems="center">
+                                <Grid item xs={6}>
+                                   <span>Don't have an account?</span>
+                                </Grid>
+                                <Grid item xs={6} className={classes.forgotPassword}>
+                                    <Button
+                                        fullWidth
+                                        id="signin-button"
+                                        variant="outlined"
+                                        size="large"
+                                        color="secondary"
+                                        className={classes.authButton}
+                                        type="button"
+                                        onClick={() => history.push('/signup')}>
+                                        Sign Up
+                                    </Button>
+                                </Grid>
+                        </Grid>
                     </div>
                 </Grid>
             </Grid>

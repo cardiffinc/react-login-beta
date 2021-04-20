@@ -32,3 +32,18 @@
     width: fit-content;
     display: inline-block;
 }
+
+.divider-text{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #0000001f;
+  line-height: 0.1em;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.divider-text-title{
+    background:#fff; 
+    padding:0 10px; 
+    color: #0000007a
+}

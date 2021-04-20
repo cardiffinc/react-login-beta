@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import artwork from '../../staticAssets/login-artwork.jpg'
+import artwork from '../../staticAssets/login-artwork.jpg';
+import GoogleSignIn from '../../staticAssets/google_signin.png'
 import EduParkLogo from '../../staticAssets/Edupark-Login-Logo-ali.png'
-import { Avatar, Button, Checkbox, FormControlLabel } from '@material-ui/core';
+import { Avatar, Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import { useHistory } from 'react-router';
 import TextInput from '../TextInput/TextField';
@@ -23,13 +24,11 @@ const useStyles = makeStyles((theme) => ({
     },
     rightDiv: {
         margin: '5em',
+        marginRight: '10em'
     },
     socialGrid: {
         marginTop: 20,
         marginBottom: 20
-    },
-    inputWrapper: {
-        marginRight: '5em'
     },
     authInput: {
         marginTop: 15,
@@ -45,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonGrid: {
         marginTop: 10,
-        paddingRight: '5em',
     },
     authButtonBG: {
         width: '-webkit-fill-available',
@@ -81,6 +79,20 @@ const useStyles = makeStyles((theme) => ({
     },
     artTextHolder: {
         margin: '5em'
+    },
+    artSubtitleHolder: {
+        marginTop: 25
+    },
+    divider: {
+        marginTop: 25,
+        marginBottom: 25,
+    },
+    googleSignIn:{
+        margin: '0 auto',
+        width: 'fit-content',
+    },
+    googleImage:{
+        height:  50
     },
 }));
 
@@ -217,7 +229,7 @@ function Signup() {
                                     />
                                 }
                                 label="I agree to the Terms and Privacy Conditions"
-                                className='art-checkbox-label text-gradient'
+                                className='art-checkbox-label-signup text-gradient'
                             />
                             {error &&
                                 <p className={classes.error}><ErrorOutlineIcon className={classes.errorIcon} /> {error}
@@ -252,6 +264,10 @@ function Signup() {
                                 </Grid>
                             </Grid>
                         </form>
+                        <Divider className={classes.divider} />
+                        <div className={classes.googleSignIn}>
+                            <img src={GoogleSignIn} className={classes.googleImage}></img>
+                        </div>
                     </div>
                 </Grid>
             </Grid>
