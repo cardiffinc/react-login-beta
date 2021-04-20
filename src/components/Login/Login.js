@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import artwork from '../../staticAssets/login-artwork.jpg'
-import GoogleSignIn from '../../staticAssets/google_signin.png'
 import EduParkLogo from '../../staticAssets/Edupark-Login-Logo-ali.png'
 import { Avatar, Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import TextInput from '../TextInput/TextField';
 import './styles.css'
+import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -56,13 +56,6 @@ const useStyles = makeStyles((theme) => ({
     forgotPassword: {
         textAlign: 'end',
         color: 'linear-gradient(to right, #5da4fa, #529afd, #4c8fff, #4c83ff, #5276fe, #5c72fd, #656efc, #6e6afa, #7670fa, #7e75fb, #867bfb, #8d81fb)'
-    },
-    googleSignIn:{
-        margin: '0 auto',
-        width: 'fit-content',
-    },
-    googleImage:{
-        height:  50
     },
     leftInnerSquare: {
         height: '60vh',
@@ -203,9 +196,7 @@ function Login() {
                         <div className='divider-text'>
                             <span className='divider-text-title'>or</span>
                         </div>
-                        <div className={classes.googleSignIn}>
-                            <img src={GoogleSignIn} className={classes.googleImage}></img>
-                        </div>
+                        <GoogleSignIn/>
                         <Divider className={classes.divider} />
                         <Grid container alignItems="center">
                                 <Grid item xs={6}>

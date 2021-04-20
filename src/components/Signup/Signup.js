@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import artwork from '../../staticAssets/login-artwork.jpg';
-import GoogleSignIn from '../../staticAssets/google_signin.png'
 import EduParkLogo from '../../staticAssets/Edupark-Login-Logo-ali.png'
 import { Avatar, Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import { useHistory } from 'react-router';
 import TextInput from '../TextInput/TextField';
 import './styles.css'
+import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -86,14 +86,7 @@ const useStyles = makeStyles((theme) => ({
     divider: {
         marginTop: 25,
         marginBottom: 25,
-    },
-    googleSignIn:{
-        margin: '0 auto',
-        width: 'fit-content',
-    },
-    googleImage:{
-        height:  50
-    },
+    }
 }));
 
 function Signup() {
@@ -265,9 +258,7 @@ function Signup() {
                             </Grid>
                         </form>
                         <Divider className={classes.divider} />
-                        <div className={classes.googleSignIn}>
-                            <img src={GoogleSignIn} className={classes.googleImage}></img>
-                        </div>
+                        <GoogleSignIn/>
                     </div>
                 </Grid>
             </Grid>
