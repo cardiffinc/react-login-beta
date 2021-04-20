@@ -10,14 +10,14 @@ import WithUser from './hoc/withUser';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
+      light: '#010013',
+      main: '#010013',
       dark: '#002884',
       contrastText: '#fff',
     },
     secondary: {
-      light: '#ff7961',
-      main: '#ff4747',
+      light: '#5da4fa',
+      main: '#5da4fa',
       dark: '#ba000d',
       contrastText: '#000',
     },

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import artwork from '../../staticAssets/login-artwork.jpg'
 import GoogleSignIn from '../../staticAssets/google_signin.png'
+import EduParkLogo from '../../staticAssets/Edupark-Login-Logo-ali.png'
 import { Avatar, Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
     formInputContentHolder:{
         marginTop: 25,
-        marginBottom: 25
+        marginBottom: 10
     },
     authInput: {
         marginTop: 15,
@@ -36,30 +37,25 @@ const useStyles = makeStyles((theme) => ({
     loginSubOptions: {
         marginTop: 25,
     },
-    checkFormControlLabel: {
-        margin: 0,
-        width: 'fit-content',
-        display: 'inline-block'
-    },
     checkbox: {
         paddingLeft: 0,
     },
     authButton: {
-        marginTop: 25,
         width: '-webkit-fill-available',
         textTransform: 'none',
         color: '#fff',
-        background: 'linear-gradient(45deg, #6B93F4 30%, #356CF1 90%)',
+        background: 'linear-gradient(to right, #5da4fa, #529afd, #4c8fff, #4c83ff, #5276fe, #5c72fd, #656efc, #6e6afa, #7670fa, #7e75fb, #867bfb, #8d81fb)'
     },
     divider: {
         marginTop: 25,
         marginBottom: 25,
     },
     heading: {
-        color: '#010013'
+        color: theme.palette.primary
     },
     forgotPassword: {
         textAlign: 'end',
+        color: 'linear-gradient(to right, #5da4fa, #529afd, #4c8fff, #4c83ff, #5276fe, #5c72fd, #656efc, #6e6afa, #7670fa, #7e75fb, #867bfb, #8d81fb)'
     },
     googleSignIn:{
         margin: '0 auto',
@@ -146,7 +142,7 @@ function Login() {
                                 <span className="art-text">▷ Digital</span>
                                 <span className="art-text">Platform</span>
                                 <span className="art-text">for distance</span>
-                                <span className="art-text">learning.</span>
+                                <span className="art-text primary-theme-color">learning.</span>
                                 <div className={classes.artSubtitleHolder}>
                                     <span className="art-subtitle">You will never know everything.</span>
                                     <span className="art-subtitle">But you will know more.</span>
@@ -157,7 +153,7 @@ function Login() {
                 </Grid>
                 <Grid item xs={6}>
                     <div className={classes.rightDiv}>
-                    <Avatar />
+                    <Avatar src={EduParkLogo}/>
                         <h1 className={classes.heading}>
                             Hey, hello 👋
                         </h1>
@@ -178,7 +174,7 @@ function Login() {
                                             />
                                         }
                                         label="Keep me logged in"
-                                        className={classes.checkFormControlLabel}
+                                        className='art-checkbox-label text-gradient'
                                     />
                                 </Grid>
                                 <Grid item xs={6} className={classes.forgotPassword}>

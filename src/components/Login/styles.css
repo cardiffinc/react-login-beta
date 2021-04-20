@@ -6,14 +6,29 @@
     font-weight: 700;
 }
 
+.primary-theme-color{
+    color: #010013
+}
+
+.secondary-them-color{
+    color: #5da4fa
+}
+
 .art-subtitle{
     text-align: start;
     display: block;
+    color: #fff
 }
 
 .text-gradient{
-    background: url('/src/staticAssets/login-artwork.jpg');
+    background: linear-gradient(to right, #5da4fa, #529afd, #4c8fff, #4c83ff, #5276fe, #5c72fd, #656efc, #6e6afa, #7670fa, #7e75fb, #867bfb, #8d81fb);;
     background-clip: initial;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.art-checkbox-label{
+    margin: 0!important;
+    width: fit-content;
+    display: inline-block;
 }
