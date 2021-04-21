@@ -150,7 +150,7 @@ function Login() {
                 </Grid>
                 <Grid item xs={6}>
                     <div className={classes.rightDiv}>
-                    <Avatar src={EduParkLogo}/>
+                    <Avatar src={EduParkLogo} className={classes.large}/>
                         <h1 className={classes.heading}>
                             Hey, hello 👋
                         </h1>

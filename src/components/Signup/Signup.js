@@ -89,6 +89,10 @@ const useStyles = makeStyles((theme) => ({
     },
     inputWrapper: {
         marginTop: 25
+    },
+    large:{
+        width: theme.spacing(7),
+        height: theme.spacing(7),
     }
 }));
 
@@ -197,7 +201,7 @@ function Signup() {
                 </Grid>
                 <Grid item xs={6}>
                     <div className={classes.rightDiv}>
-                        <Avatar src={EduParkLogo} />
+                        <Avatar src={EduParkLogo} className={classes.large}/>
                         <h1 className={classes.heading}>
                             Hey, Welcome! 🙋‍♂️
                         </h1>
