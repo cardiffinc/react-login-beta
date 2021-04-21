@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.f0549776.chunk.css",
-    "main.js": "/static/js/main.3c00440e.chunk.js",
-    "runtime-main.js": "/static/js/runtime-main.f232eb4f.js",
-    "static/js/2.916a29b0.chunk.js": "/static/js/2.916a29b0.chunk.js",
+    "main.css": "/static/css/main.26d1f724.chunk.css",
+    "main.js": "/static/js/main.06ee2788.chunk.js",
+    "runtime-main.js": "/static/js/runtime-main.d112dbb8.js",
+    "static/js/2.48af0671.chunk.js": "/static/js/2.48af0671.chunk.js",
     "index.html": "/index.html",
-    "static/js/2.916a29b0.chunk.js.LICENSE.txt": "/static/js/2.916a29b0.chunk.js.LICENSE.txt",
-    "static/media/login-artwork.e8dc0e0b.png": "/static/media/login-artwork.e8dc0e0b.png"
+    "static/js/2.48af0671.chunk.js.LICENSE.txt": "/static/js/2.48af0671.chunk.js.LICENSE.txt",
+    "static/media/Edupark-Login-Logo-ali.c9130242.png": "/static/media/Edupark-Login-Logo-ali.c9130242.png",
+    "static/media/login-artwork.4a26a8fc.jpg": "/static/media/login-artwork.4a26a8fc.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f232eb4f.js",
-    "static/js/2.916a29b0.chunk.js",
-    "static/css/main.f0549776.chunk.css",
-    "static/js/main.3c00440e.chunk.js"
+    "static/js/runtime-main.d112dbb8.js",
+    "static/js/2.48af0671.chunk.js",
+    "static/css/main.26d1f724.chunk.css",
+    "static/js/main.06ee2788.chunk.js"
   ]
 }
