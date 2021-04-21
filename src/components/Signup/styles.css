@@ -39,5 +39,5 @@
 .MuiButton-contained.Mui-disabled {
     color: rgba(0, 0, 0, 0.26)!important;
     box-shadow: none!important;
-    background-color: rgba(0, 0, 0, 0.12)!important;
+    background: rgba(0, 0, 0, 0.12)!important;
 }

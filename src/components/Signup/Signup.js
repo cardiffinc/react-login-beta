@@ -6,9 +6,9 @@ import EduParkLogo from '../../staticAssets/Edupark-Login-Logo-ali.png'
 import { Avatar, Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import { useHistory } from 'react-router';
-import TextInput from '../TextInput/TextField';
 import './styles.css'
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
+import StyledTextInput from '../StyledTextInput/StylesTextInput';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -86,6 +86,13 @@ const useStyles = makeStyles((theme) => ({
     divider: {
         marginTop: 25,
         marginBottom: 25,
+    },
+    inputWrapper: {
+        marginTop: 25
+    },
+    large:{
+        width: theme.spacing(7),
+        height: theme.spacing(7),
     }
 }));
 
@@ -98,7 +105,7 @@ function Signup() {
     const [policy, setPolicy] = useState(false);
     const [disableButton, setDisableButton] = useState(true);
     const [error, setError] = useState(null);
-    document.title = 'SJoshuaDarth\'s Template | Signup';
+    document.title = 'SJoshuadarth\'s Template | Signup';
 
     const checkUserExists = user => {
         return email === user.email;
@@ -194,7 +201,7 @@ function Signup() {
                 </Grid>
                 <Grid item xs={6}>
                     <div className={classes.rightDiv}>
-                        <Avatar src={EduParkLogo} />
+                        <Avatar src={EduParkLogo} className={classes.large}/>
                         <h1 className={classes.heading}>
                             Hey, Welcome! 🙋‍♂️
                         </h1>
@@ -202,13 +209,13 @@ function Signup() {
 
                         <form onSubmit={handleSignup}>
                             <div className={classes.inputWrapper}>
-                                <TextInput
+                                <StyledTextInput
                                     {...configNameInput}
                                     handleChange={event => setName(event.target.value)} />
-                                <TextInput
+                                <StyledTextInput
                                     {...configEmailInput}
                                     handleChange={event => setEmail(event.target.value)} />
-                                <TextInput
+                                <StyledTextInput
                                     {...configPasswordInput}
                                     handleChange={event => setPassword(event.target.value)} />
                             </div>
