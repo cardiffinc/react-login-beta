@@ -112,7 +112,6 @@ function Login() {
 
     useEffect(() => {
         setError(null);
-        console.log(email, password)
         if (email !== '' && password !== '') {
             setDisableButton(false)
         } else setDisableButton(true)
