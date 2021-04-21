@@ -5,7 +5,7 @@ import './styles.css'
 
 function Home() {
     const history = useHistory();
-    document.title = 'SJoshuaDarth\'s Template | Home';
+    document.title = 'SJoshuadarth\'s Template | Home';
     const {name} = JSON.parse(localStorage.getItem('currentDarthUser'));
     const handleLogout = () => {
         try{

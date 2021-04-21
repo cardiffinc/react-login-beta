@@ -5,10 +5,9 @@ import artwork from '../../staticAssets/login-artwork.jpg'
 import EduParkLogo from '../../staticAssets/Edupark-Login-Logo-ali.png'
 import { Avatar, Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
-import TextInput from '../TextInput/TextField';
 import './styles.css'
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
+import StyledTextInput from '../StyledTextInput/StylesTextInput';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -44,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
         width: '-webkit-fill-available',
         textTransform: 'none',
         color: '#fff',
-        background: 'linear-gradient(to right, #5da4fa, #529afd, #4c8fff, #4c83ff, #5276fe, #5c72fd, #656efc, #6e6afa, #7670fa, #7e75fb, #867bfb, #8d81fb)'
+        background: 'linear-gradient(to right, #5da4fa, #529afd, #4c8fff, #4c83ff, #5276fe, #5c72fd, #656efc, #6e6afa, #7670fa, #7e75fb, #867bfb, #8d81fb)',
     },
     divider: {
         marginTop: 25,
@@ -87,7 +86,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [disableButton, setDisableButton] = useState(true);
     const [error, setError] = useState(null);
-    document.title = 'SJoshuaDarth\'s Template | Login';
+    document.title = 'SJoshuadarth\'s Template | Login';
 
     const checkUserExists = user => {
         return email === user.email;
@@ -113,6 +112,7 @@ function Login() {
 
     useEffect(() => {
         setError(null);
+        console.log(email, password)
         if (email !== '' && password !== '') {
             setDisableButton(false)
         } else setDisableButton(true)
@@ -158,8 +158,8 @@ function Login() {
 
                         <form onSubmit={handleLogin}>
                             <div className={classes.formInputContentHolder}>
-                                <TextInput {...configEmailInput} handleChange={event => setEmail(event.target.value)} />
-                                <TextInput {...configPasswordInput} handleChange={event => setPassword(event.target.value)} />
+                                <StyledTextInput {...configEmailInput} handleChange={event => setEmail(event.target.value)} />
+                                <StyledTextInput {...configPasswordInput} handleChange={event => setPassword(event.target.value)} />
                                 <Grid container alignItems="center">
                                 <Grid item xs={6}>
                                     <FormControlLabel
