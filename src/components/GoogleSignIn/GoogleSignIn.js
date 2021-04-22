@@ -17,7 +17,7 @@ function GoogleSignIn() {
     return (
         <div className={classes.googleSignIn}>
             <Tooltip title="Google Sign In Not Implemented">
-                <img src={GoogleSignInLogo} className={classes.googleImage}/>
+                <img alt="Google Signin" src={GoogleSignInLogo} className={classes.googleImage}/>
             </Tooltip>
         </div>
     )

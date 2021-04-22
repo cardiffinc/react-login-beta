@@ -83,10 +83,6 @@ const useStyles = makeStyles((theme) => ({
     artSubtitleHolder: {
         marginTop: 25
     },
-    divider: {
-        marginTop: 25,
-        marginBottom: 25,
-    },
     inputWrapper: {
         marginTop: 25
     },
