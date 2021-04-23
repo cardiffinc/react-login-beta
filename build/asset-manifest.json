@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.26d1f724.chunk.css",
-    "main.js": "/static/js/main.06ee2788.chunk.js",
+    "main.js": "/static/js/main.71e83d02.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.d112dbb8.js",
-    "static/js/2.48af0671.chunk.js": "/static/js/2.48af0671.chunk.js",
+    "static/js/2.ec36854c.chunk.js": "/static/js/2.ec36854c.chunk.js",
     "index.html": "/index.html",
-    "static/js/2.48af0671.chunk.js.LICENSE.txt": "/static/js/2.48af0671.chunk.js.LICENSE.txt",
+    "static/js/2.ec36854c.chunk.js.LICENSE.txt": "/static/js/2.ec36854c.chunk.js.LICENSE.txt",
     "static/media/Edupark-Login-Logo-ali.c9130242.png": "/static/media/Edupark-Login-Logo-ali.c9130242.png",
     "static/media/login-artwork.4a26a8fc.jpg": "/static/media/login-artwork.4a26a8fc.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d112dbb8.js",
-    "static/js/2.48af0671.chunk.js",
+    "static/js/2.ec36854c.chunk.js",
     "static/css/main.26d1f724.chunk.css",
-    "static/js/main.06ee2788.chunk.js"
+    "static/js/main.71e83d02.chunk.js"
   ]
 }

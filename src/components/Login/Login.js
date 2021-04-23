@@ -117,6 +117,11 @@ function Login() {
         } else setDisableButton(true)
     }, [email, password])
 
+    useEffect(() => {
+        if (error) setDisableButton(true)
+        else setDisableButton(false);
+    }, [error])
+
     const configEmailInput = {
         id: "email-input",
         label: "Email",
